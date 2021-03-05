@@ -102,13 +102,13 @@ function crearInveractividad(){
 
     });
 
-    document.addEventListener('mousemove',function(event){
+    document.addEventListener('touchmove',function(event){
         pmouse.x = (  event.touches[0].clientX / window.innerWidth ) * 2 - 1;
 	    pmouse.y = - ( event.touches[0].clientY / window.innerHeight ) * 2 + 1;
         material.color.setRGB(0,0,1);
     });
 
-    document.addEventListener('mousedown',function(event){
+    document.addEventListener('touchstart',function(event){
         mouse.x = (  event.touches[0].clientX / window.innerWidth ) * 2 - 1;
 	    mouse.y = - ( event.touches[0].clientY / window.innerHeight ) * 2 + 1;
         rayo.setFromCamera( mouse, mundo.camara );
@@ -137,7 +137,7 @@ function crearInveractividad(){
 
     });
 
-    document.addEventListener('mouseup',function(event){
+    document.addEventListener('touchend',function(event){
         nucleo1activo = false;
         nucleo2activo = false;
         nucleo3activo = false;
