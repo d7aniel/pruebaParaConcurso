@@ -105,6 +105,7 @@ function crearInveractividad(){
     document.addEventListener('mousemove',function(event){
         pmouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	    pmouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        material.color.setRGB(0,0,1);
     });
 
     document.addEventListener('mousedown',function(event){
@@ -116,6 +117,7 @@ function crearInveractividad(){
         //que estan dentro de la lista de modelos
         if(objetos.length>0){
             if(objetos[0].object === nucleo1){
+                material.color.setRGB(0,1,0);
 /*                var cant = modelos.length;
                 var tono = Math.random();
                 for(var i=0;i<cant;i++){
@@ -123,19 +125,23 @@ function crearInveractividad(){
                 }*/
                 nucleo1activo = true;
             }else if(objetos[0].object === nucleo2){
+                material.color.setRGB(0,1,1);
                 //objetos[0].object.material.color.setRGB(Math.random(),Math.random(),Math.random());
                 nucleo2activo = true;
             }else if(objetos[0].object === nucleo3){
+                material.color.setRGB(1,1,0);
                 //objetos[0].object.material.color.setRGB(Math.random(),Math.random(),Math.random());
                 nucleo3activo = true;
             }
         }
+
     });
 
     document.addEventListener('mouseup',function(event){
         nucleo1activo = false;
         nucleo2activo = false;
         nucleo3activo = false;
+        material.color.setRGB(1,0,0);
     });
 }
 
@@ -332,7 +338,7 @@ function animar(){
             }
         }
     }
-
+/*
     if(nucleo3activo){
         let diff = mouse.y - pmouse.y;
         nucleo3.rotation.z=diff>0?nucleo3.rotation.z+0.01:diff<0?nucleo3.rotation.z-0.01:nucleo3.rotation.z;
@@ -359,7 +365,7 @@ function animar(){
         mouse.y = pmouse.y;
         material2.color.setRGB(rojo,verde,azul);
         material.color.setRGB(rojo,verde,azul);
-    }
+    }*/
 }
 
 function hacerEspiral(unaForma,geoDestino,queForma){
