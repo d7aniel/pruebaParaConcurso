@@ -105,7 +105,7 @@ function crearInveractividad(){
     document.addEventListener('touchmove',function(event){
         pmouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	    pmouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-        material.color.setRGB(0,0,1);
+        material.color.setRGB(1,0,0);
     });
 
     document.addEventListener('touchstart',function(event){
@@ -141,7 +141,7 @@ function crearInveractividad(){
         nucleo1activo = false;
         nucleo2activo = false;
         nucleo3activo = false;
-        material.color.setRGB(1,0,0);
+        material.color.setRGB(0,0,1);
     });
 }
 
