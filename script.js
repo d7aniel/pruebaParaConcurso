@@ -176,7 +176,7 @@ function crearIlustraciones(){
 	}
 	const geoCirculo = new THREE.BufferGeometry();
 	geoCirculo.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
-    material = new THREE.LineBasicMaterial( {	color: 0xffffff,linewidth: 1 } );
+    material = new THREE.LineBasicMaterial( {	color: 0xffffff } );
     material.color.setRGB(rojo,verde,azul);
     const verticesElipse = [];
     const ini = -Math.PI*0.1;
