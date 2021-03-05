@@ -102,15 +102,15 @@ function crearInveractividad(){
 
     });
 
-    document.addEventListener('touchmove',function(event){
-        pmouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	    pmouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-        material.color.setRGB(1,0,0);
+    document.addEventListener('mousemove',function(event){
+        pmouse.x = (  event.touches[0].clientX / window.innerWidth ) * 2 - 1;
+	    pmouse.y = - ( event.touches[0].clientY / window.innerHeight ) * 2 + 1;
+        material.color.setRGB(0,0,1);
     });
 
-    document.addEventListener('touchstart',function(event){
-        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    document.addEventListener('mousedown',function(event){
+        mouse.x = (  event.touches[0].clientX / window.innerWidth ) * 2 - 1;
+	    mouse.y = - ( event.touches[0].clientY / window.innerHeight ) * 2 + 1;
         rayo.setFromCamera( mouse, mundo.camara );
 	    var objetos = rayo.intersectObjects( mundo.escena.children, true );
         //var objetos = rayo.intersectObjects( modelos );  esta linea pregunta especifcamente si el rayo se choca con los elementos
@@ -137,11 +137,11 @@ function crearInveractividad(){
 
     });
 
-    document.addEventListener('touchend',function(event){
+    document.addEventListener('mouseup',function(event){
         nucleo1activo = false;
         nucleo2activo = false;
         nucleo3activo = false;
-        material.color.setRGB(0,0,1);
+        material.color.setRGB(1,0,0);
     });
 }
 
